@@ -4,12 +4,16 @@
   </p>
 
   <md-input-container flex>
-    <label>Example input</label>
-    <input ng-model="radians">
+    <label>Function</label>
+    <input ng-model="home.fn">
+  </md-input-container>
+  <md-input-container flex>
+    <label>Value of x</label>
+    <input ng-model="home.x">
   </md-input-container>
   <div layout="row" layout-wrap>
-    <md-button class="md-raised md-primary" flex ng-click="home.calculate($event, radians)">
-      An awesome button
+    <md-button class="md-raised md-primary" flex ng-click="home.evaluate()">
+      Evaluate
     </md-button>
   </div>
   <div layout layout-align="center center">

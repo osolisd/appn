@@ -3,6 +3,10 @@ angular.module('numerical-analysis')
   'use strict';
   var self = this;
 
+  self.evaluate = function evaluateFn(){
+    console.log(Methods.evaluate(self.fn, { x : self.x }));
+  }
+
   self.toggleInfo = $mdUtil.debounce(function(){
       $mdSidenav('info').toggle();
     },
