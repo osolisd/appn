@@ -9,9 +9,10 @@
   "main": "main.js",
   "dependencies": {
     "angular": "1.4.5",
+    "angular-animate": "1.4.5",
     "angular-material": "0.10.0",
-    "ui-router": "0.2.15",
-    "angular-animate": "1.4.5"
+    "js-expression-eval": "https://github.com/silentmatt/js-expression-eval.git",
+    "ui-router": "0.2.15"
   },
   "keywords": [
     "numerical",

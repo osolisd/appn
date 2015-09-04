@@ -3,7 +3,7 @@ angular.module('numerical-analysis')
   'use strict';
 
   function fixedPoint(args) {
-    // body...
+    return true;
   }
 
   function newtonRaphson(args) {
