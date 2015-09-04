@@ -1,0 +1,24 @@
+{
+  "name": "numerical-analysis",
+  "version": "0.1.0",
+  "homepage": "https://github.com/castillobg/numerical-analysis",
+  "authors": [
+    "castillobg"
+  ],
+  "description": "An app that features multiple numerical analysis methods, for our Numerical Analysis class, ST0256.",
+  "main": "main.js",
+  "dependencies": {
+    "angular": "1.4.5",
+    "angular-material": "0.10.0",
+    "ui-router": "0.2.15",
+    "angular-animate": "1.4.5"
+  },
+  "keywords": [
+    "numerical",
+    "analysis"
+  ],
+  "license": "MIT",
+  "resolutions": {
+    "angular": "1.4.5"
+  }
+}
