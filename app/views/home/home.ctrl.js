@@ -4,7 +4,7 @@ angular.module('numerical-analysis')
   var self = this;
 
   self.evaluate = function evaluateFn(){
-    console.log(Methods.evaluate(self.fn, { x : self.x }));
+    console.log(Methods.bisection(self.fn, 'x', -3, -2, 800, 0, 0));
   }
 
   self.toggleInfo = $mdUtil.debounce(function(){

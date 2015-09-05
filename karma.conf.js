@@ -26,7 +26,7 @@ module.exports = function(config) {
       'app/services/**/*.js',
       'app/views/**/*.js',
       // Tests
-      'spec/**/*.spec.js'
+      'test/unit/**/*.spec.js'
     ],
 
 
