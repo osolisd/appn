@@ -4,5 +4,5 @@ angular.module('numerical-analysis')
     url: '/',
     templateUrl: 'views/home/home.html',
     controller: 'HomeCtrl as home'
-  })
+  });
 });
