@@ -1,0 +1,47 @@
+<div class="md-padding">
+  <p class="inset" layout layout-align="center center">
+    FALSE POSITION
+  </p>
+
+  <md-input-container flex>
+    <label>Function</label>
+    <input ng-model="falsePos.fn">
+  </md-input-container>
+  <md-input-container flex>
+    <label>Value of x</label>
+    <input ng-model="falsePos.x">
+  </md-input-container>
+  <div layout="row" layout-wrap>
+    <md-button class="md-raised md-primary" flex ng-click="falsePos.calculate()">
+      Evaluate
+    </md-button>
+  </div>
+  <div layout layout-align="center center">
+    <md-button ng-click="falsePos.toggleInfo()">Info</md-button>
+  </div>
+
+  <p class="inset" layout layout-align="center center">
+    TRY ANOTHER METHOD:
+      <md-button ui-sref="methods.bisection">bisection</md-button>
+  </p>
+
+  <md-sidenav class="md-sidenav-right md-whiteframe-z2" md-component-id="info">
+    <md-toolbar class="md-theme-light">
+      <h1 class="md-toolbar-tools">Info</h1>
+    </md-toolbar>
+    <md-content class="md-padding" layout-padding>
+      <p>
+        The false position method or regula falsi method is a term for problem-solving methods in
+        arithmetic, algebra, and calculus. In simple terms, these methods begin by attempting to
+        evaluate a problem using test ("false") values for the variables, and then adjust the
+        values accordingly.
+      </p>
+      <md-button ng-href="https://en.wikipedia.org/wiki/False_position_method" target="_blank">
+        Learn more
+      </md-button>
+      <md-button ng-click="falsePos.closeInfo()" class="md-primary">
+        Got it
+      </md-button>
+    </md-content>
+  </md-sidenav>
+</div>
