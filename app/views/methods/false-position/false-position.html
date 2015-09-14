@@ -1,20 +1,88 @@
-<div class="md-padding">
+<div class="md-padding" layout="column">
   <p class="inset" layout layout-align="center center">
     FALSE POSITION
   </p>
-
-  <md-input-container flex>
-    <label>Function</label>
-    <input ng-model="falsePos.fn">
-  </md-input-container>
-  <md-input-container flex>
-    <label>Value of x</label>
-    <input ng-model="falsePos.x">
-  </md-input-container>
-  <div layout="row" layout-wrap>
-    <md-button class="md-raised md-primary" flex ng-click="falsePos.calculate()">
-      Evaluate
-    </md-button>
+  <form name="paramsForm" ng-submit="falsePos.calculate(paramsForm)">
+    <md-input-container flex>
+      <label>Function</label>
+      <input required name="fn" ng-model="falsePos.params.fn">
+      <div ng-messages="paramsForm.fn.$error">
+        <div ng-message="required">This is required.</div>
+      </div>
+    </md-input-container>
+    <div layout="row">
+      <md-input-container flex>
+        <label>Value of a</label>
+        <input required name="a" ng-model="falsePos.params.a">
+        <div ng-messages="paramsForm.a.$error">
+          <div ng-message="required">a is required. You need a starting point!</div>
+        </div>
+      </md-input-container flex>
+      <md-input-container flex>
+        <label>Value of b</label>
+        <input required name="b" ng-model="falsePos.params.b">
+        <div ng-messages="paramsForm.b.$error">
+          <div ng-message="required">b is required.</div>
+        </div>
+      </md-input-container>
+    </div>
+    <div layout="row">
+      <md-input-container flex>
+        <label>Maximum itereations</label>
+        <input ng-model="falsePos.params.nmax">
+        <div ng-messages="paramsForm.a.$error">
+          <div ng-message="required">This is required.</div>
+        </div>
+      </md-input-container flex>
+      <md-input-container flex>
+        <label>Tolerance (optional)</label>
+        <input ng-model="falsePos.params.tol">
+      </md-input-container>
+      <md-input-container flex>
+        <label>Delta (optional)</label>
+        <input ng-model="falsePos.params.delta">
+      </md-input-container>
+    </div>
+    <div layout="row" layout-wrap>
+      <md-button class="md-raised md-primary" flex type="submit">
+        Evaluate
+      </md-button>
+    </div>
+  </form>
+  <div ng-show="falsePos.results.length > 0">
+    <p class="inset" layout layout-align="center center">
+      RESULTS
+    </p>
+    <table>
+      <tr>
+        <th>
+          Iteration #
+        </th>
+        <th>
+          Value of x
+        </th>
+        <th>
+          f(x)
+        </th>
+        <th>
+          Error
+        </th>
+      </tr>
+      <tr ng-repeat="result in falsePos.results">
+        <td>
+          {{ $index }}
+        </td>
+        <td>
+          {{ result.x }}
+        </td>
+        <td>
+          {{ result.fx }}
+        </td>
+        <td>
+          {{ result.error }}
+        </td>
+      </tr>
+    </table>
   </div>
   <div layout layout-align="center center">
     <md-button ng-click="falsePos.toggleInfo()">Info</md-button>
