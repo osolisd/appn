@@ -18,8 +18,8 @@ angular.module('numerical-analysis')
       self.params.a,
       self.params.b,
       self.params.nmax,
-      self.params.tol,
-      self.params.delta);
+      self.params.tol || 0.0,
+      self.params.delta || 0.0);
   };
 
   self.toggleInfo = $mdUtil.debounce(function(){

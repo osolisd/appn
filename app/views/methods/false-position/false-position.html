@@ -15,7 +15,7 @@
         <label>Value of a</label>
         <input required name="a" ng-model="falsePos.params.a">
         <div ng-messages="paramsForm.a.$error">
-          <div ng-message="required">a is required. You need a starting point!</div>
+          <div ng-message="required">a is required.</div>
         </div>
       </md-input-container flex>
       <md-input-container flex>
@@ -53,36 +53,26 @@
     <p class="inset" layout layout-align="center center">
       RESULTS
     </p>
-    <table>
-      <tr>
-        <th>
-          Iteration #
-        </th>
-        <th>
-          Value of x
-        </th>
-        <th>
-          f(x)
-        </th>
-        <th>
-          Error
-        </th>
-      </tr>
-      <tr ng-repeat="result in falsePos.results">
-        <td>
-          {{ $index }}
-        </td>
-        <td>
-          {{ result.x }}
-        </td>
-        <td>
-          {{ result.fx }}
-        </td>
-        <td>
-          {{ result.error }}
-        </td>
-      </tr>
-    </table>
+    <md-data-table-container>
+      <table md-data-table>
+        <thead>
+          <tr>
+            <th numeric name="Iteration"></th>
+            <th numeric name="x"></th>
+            <th numeric name="f(x)"></th>
+            <th numeric name="Error"></th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr ng-repeat="result in falsePos.results">
+            <td>{{ $index + 1 }}</td>
+            <td>{{ result.x }}</td>
+            <td>{{ result.fx }}</td>
+            <td>{{ result.error }}</td>
+          </tr>
+        </tbody>
+      </table>
+    </md-data-table-container>
   </div>
   <div layout layout-align="center center">
     <md-button ng-click="falsePos.toggleInfo()">Info</md-button>
