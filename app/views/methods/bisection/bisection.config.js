@@ -3,6 +3,9 @@ angular.module('numerical-analysis')
   $stateProvider.state('methods.bisection', {
     url : '/bisection',
     templateUrl : 'views/methods/bisection/bisection.html',
-    controller : 'bisectionCtrl as bisection'
+    controller : 'bisectionCtrl as bisection',
+    params : {
+      fn : null
+    }
   });
 });

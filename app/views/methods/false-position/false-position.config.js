@@ -5,7 +5,7 @@ angular.module('numerical-analysis')
     templateUrl : 'views/methods/false-position/false-position.html',
     controller : 'falsePositionCtrl as falsePos',
     params : {
-      params : {}
+      fn : null
     }
   });
 });

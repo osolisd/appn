@@ -6,7 +6,12 @@ angular.module('numerical-analysis')
     return Parser.parse(fn).evaluate(vars);
   }
 
+  function getAvailableMethods(){
+    return ['bisection', 'false position'];
+  }
+
   return {
-    'evaluate' : evaluate
+    'evaluate' : evaluate,
+    'getAvailableMethods' : getAvailableMethods
   };
 })

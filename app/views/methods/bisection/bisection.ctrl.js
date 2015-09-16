@@ -1,5 +1,5 @@
 angular.module('numerical-analysis')
-.controller('bisectionCtrl', function($mdSidenav, $mdUtil, MethodCommons){
+.controller('bisectionCtrl', function($state, $stateParams, $mdSidenav, $mdUtil, MethodCommons){
   'use strict';
   var self = this;
 
