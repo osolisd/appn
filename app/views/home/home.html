@@ -1,30 +1,10 @@
-<div class="md-padding">
+<div class="md-padding" layout="column">
   <p class="inset" layout layout-align="center center">
-    Calculate stuff!
+    Select a method
   </p>
 
-  <md-input-container flex>
-    <label>Function</label>
-    <input ng-model="home.fn">
-  </md-input-container>
-  <md-input-container flex>
-    <label>Value of x</label>
-    <input ng-model="home.x">
-  </md-input-container>
-  <div layout="row" layout-wrap>
-    <md-button class="md-raised md-primary" flex ng-click="home.evaluate()">
-      Evaluate
-    </md-button>
-  </div>
-  <div layout layout-align="center center">
-    <md-button ng-click="home.toggleInfo()">Info</md-button>
-  </div>
-
-  <p class="inset" layout layout-align="center center">
-    SELECT A METHOD:
-      <md-button ui-sref="methods.bisection">bisection</md-button> |
-      <md-button ui-sref="methods.false-position">false position</md-button>
-  </p>
+  <md-button class="md-raised md-primary" ui-sref="methods.bisection">Bisection</md-button>
+  <md-button class="md-raised md-primary" ui-sref="methods.false-position">False position</md-button>
 
   <md-sidenav class="md-sidenav-right md-whiteframe-z2" md-component-id="info">
     <md-toolbar class="md-theme-light">
