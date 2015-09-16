@@ -1,5 +1,5 @@
 angular.module('numerical-analysis')
-.controller('falsePositionCtrl', function($state, $stateParams, $mdSidenav, $mdUtil, FalsePosition, MethodCommons){
+.controller('FalsePositionCtrl', function($state, $stateParams, $mdSidenav, $mdUtil, FalsePosition, MethodCommons){
   'use strict';
 
   var self = this;
