@@ -11,8 +11,10 @@
     "angular": "1.4.5",
     "angular-animate": "1.4.5",
     "angular-material": "0.10.0",
+    "angular-messages": "1.4.5",
     "js-expression-eval": "https://github.com/silentmatt/js-expression-eval.git",
-    "ui-router": "0.2.15"
+    "ui-router": "0.2.15",
+    "angular-material-data-table": "0.8.11"
   },
   "keywords": [
     "numerical",

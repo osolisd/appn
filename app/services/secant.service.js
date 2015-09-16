@@ -1,0 +1,76 @@
+angular.module('numerical-analysis')
+.factory('Secant',function SecantMethod(){
+	
+	function eval(func,num){
+		return Parser.parse(func).evaluate({ x: num });
+	}
+
+	var result = 0;
+	var error = 1;
+	var arrx = [];
+	var arrf = [];
+	var arrError = [null,null];
+	var reason = "";
+	var i = 0;
+
+	function CalculateBySecant(func,a,b,nmax,tol,delta){
+		console.log("entra");
+		var x = 0;
+		var h = 1;
+		var q = 0;
+		arrx = [a,b];
+		arrf = [eval(func,a).toExponential(3),eval(func,b).toExponential(3)];
+		while((i < nmax) && (error > tol) && (h > delta)){
+			x = Number(b) - ((eval(func,Number(b)))*(Number(b)-Number(a))/(eval(func,Number(b))-eval(func,Number(a))));
+			arrx.push(x.toExponential(3));
+			h = Math.abs(eval(func,x));
+			error = Math.abs(Number(x) - Number(q));
+			arrError.push((error.toExponential(3)));
+			var tempx = eval(func,Number(x));
+			arrf.push(Number(tempx.toExponential(3)));
+			a = Number(b);
+			b = Number(x);
+			q = x;
+			i++;
+		}
+		if(error == tol){
+			reason="Error is equal to tolerance";
+		}else{
+			if(h == delta){
+				reason="F(x) is equal to delta";
+			}
+		}
+		result = x;
+	};
+
+	function getResult(){
+		return result;
+	}
+	function getx(){
+		return arrx;
+	}
+	function getfx(){
+		return arrf;
+	}
+	function getError(){
+		return arrError;
+	}
+	function geti(){
+		return i;
+	}
+	function getReason(){
+		return reason;
+	}
+
+	return{
+		'CalculateBySecant' : CalculateBySecant,
+		'getResult' : getResult,
+		'getx' : getx,
+		'getfx' : getfx,
+		'getError' : getError,
+		'geti' : geti,
+		'getReason' : getReason
+
+	};
+
+})

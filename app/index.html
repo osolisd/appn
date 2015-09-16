@@ -7,6 +7,7 @@
     <link
       rel="stylesheet" href="lib/angular-material/angular-material.css"
       charset="utf-8">
+      <link href="lib/angular-material-data-table/dist/md-data-table.min.css" rel="stylesheet" type="text/css"/>
   </head>
   <body ng-app="numerical-analysis">
     <md-toolbar>
@@ -23,14 +24,16 @@
     <script src="lib/angular-aria/angular-aria.min.js" type="text/javascript"></script>
     <script src="lib/angular-material/angular-material.min.js" type="text/javascript"></script>
     <script src="lib/js-expression-eval/parser.js" type="text/javascript"></script>
+    <script type="text/javascript" src="lib/angular-material-data-table/dist/md-data-table.min.js"></script>
     <!-- main module -->
     <script src="main.js" type="text/javascript"></script>
     <!-- services -->
     <script src="services/methods.service.js" type="text/javascript"></script>
+    <script src="services/secant.service.js" type="text/javascript"></script>
     <!-- views -->
     <script src="views/home/home.config.js" type="text/javascript"></script>
     <script src="views/home/home.ctrl.js" type="text/javascript"></script>
-    <script src="views/bisection/bisection.config.js" type="text/javascript"></script>
-    <script src="views/bisection/bisection.ctrl.js" type="text/javascript"></script>
+    <script src="views/secant/secant.config.js" type="text/javascript"></script>
+    <script src="views/secant/secant.ctrl.js" type="text/javascript"></script>
   </body>
 </html>
