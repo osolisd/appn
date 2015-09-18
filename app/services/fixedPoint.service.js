@@ -2,7 +2,7 @@ angular.module('numerical-analysis')
 .factory('FixedPoint', function(MethodCommons) {
   'use strict';
 
-  function calculate(fn, gn,varName,x0,nmax,tol,delta){
+  function calculate(fn, gn,x0,nmax,tol,delta){
     var i=0;
     var x = x0;
     var err = 1;

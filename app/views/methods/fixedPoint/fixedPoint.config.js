@@ -1,4 +1,4 @@
-angular.nodule('numerical-analysis')
+angular.module('numerical-analysis')
 .config(function($stateProvider){
   $stateProvider.state('methods.fixedPoint', {
     url: '/fixedPoint',

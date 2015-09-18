@@ -4,9 +4,12 @@
         <md-input-container flex>
             <label>Original function</label>
             <input required name="fn" ng-model="fixedPoint.params.fn">
+            <div ng-messages="paramsForm.fn.$error">
+                <div ng-message="required">This is required.</div>
+            </div>
             <label>Modified function (g(x))</label>
             <input required name ="gn" ng-model = "fixedPoint.params.gn">
-            <div ng-messages="paramsForm.fn.$error">
+            <div ng-messages="paramsForm.gn.$error">
                 <div ng-message="required">This is required.</div>
             </div>
         </md-input-container>
