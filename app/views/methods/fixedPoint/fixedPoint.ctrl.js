@@ -1,5 +1,5 @@
-angula.module('numerical-analysis')
-.controller('FixedPointCtrl',function($state,$stateParamas, $mdSidenav, $mdUtil, FixedPoint, MethodCommons) {
+angular.module('numerical-analysis')
+.controller('FixedPointCtrl',function( $state, $stateParams, $mdSidenav, $mdUtil, FixedPoint, MethodCommons) {
   'use strict';
 
   var self = this;
@@ -21,7 +21,7 @@ angula.module('numerical-analysis')
       self.params.fn,
       self.params.gn,
       self.params.varName,
-      self.params.x0,
+      self.params.x,
       self.params.nmax,
       self.params.tol || 0.0,
       self.params.delta || 0.0);
@@ -51,7 +51,7 @@ angula.module('numerical-analysis')
     self.params.fn = $stateParams.fn || 'exp(x) + 3 * sin(x) - (x^3) + 4 * x - 2';
     self.params.gn = $stateParams.gn || '(exp(x) + 3 * sin(x) + 4 * x - 2)^(1/3)';
     self.params.varName = $stateParams.x || 'x';
-    self.params.x0 = $stateParams.x0 || -2.7;
+    self.params.x = $stateParams.x0 || -3;
     self.params.nmax = $stateParams.nmax || 100;
     self.params.tol = $stateParams.tol || 0.0;
     self.params.delta = $stateParams.delta || 0.0;

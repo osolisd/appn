@@ -7,18 +7,24 @@
             <div ng-messages="paramsForm.fn.$error">
                 <div ng-message="required">This is required.</div>
             </div>
-            <label>Modified function (g(x))</label>
-            <input required name ="gn" ng-model = "fixedPoint.params.gn">
-            <div ng-messages="paramsForm.gn.$error">
-                <div ng-message="required">This is required.</div>
+        </md-input-container>
+
+        <md-input-container flex>
+            <div layout="row">
+                <label>Modified function (g(x))</label>
+                <input required name ="gn" ng-model = "fixedPoint.params.gn">
+                <div ng-messages="paramsForm.gn.$error">
+                    <div ng-message="required">This is required.</div>
+                </div>
             </div>
         </md-input-container>
+
         <div layout="row">
             <md-input-container flex>
-                <label>Value of x0</label>
+                <label>Value of x</label>
                 <input required name="x0" ng-model="fixedPoint.params.x0">
                 <div ng-messages="paramsForm.x0.$error">
-                    <div ng-message="required">x0 is required.</div>
+                    <div ng-message="required">x is required.</div>
                 </div>
             </md-input-container flex>
         </div>
@@ -68,16 +74,14 @@
                     <th numeric name="Iteration"></th>
                     <th numeric name="x"></th>
                     <th numeric name="f(x)"></th>
-                    <th numeric name="g(x)"></th>
                     <th numeric name="Error"></th>
                 </tr>
                 </thead>
                 <tbody>
-                <tr ng-repeat="result in falsePos.results">
+                <tr ng-repeat="result in fixedPoint.results">
                     <td>{{ $index + 1 }}</td>
                     <td>{{ result.x }}</td>
                     <td>{{ result.fx }}</td>
-                    <td>{{ result.gx }}</td>
                     <td>{{ result.error }}</td>
                 </tr>
                 </tbody>
