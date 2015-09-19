@@ -27,6 +27,7 @@ angular.module('numerical-analysis')
         a = x;
       }
       q = x;
+      i++;
     }
     return data;
   }

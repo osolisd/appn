@@ -28,6 +28,7 @@ angular.module('numerical-analysis')
       else {
         a = x;
       }
+      i++;
     }
     return data;
   }

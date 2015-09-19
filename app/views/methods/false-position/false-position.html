@@ -1,9 +1,9 @@
 <div class="md-padding" layout="column">
   <h2 class="md-title">False Position</h2>
-  <form name="paramsForm" ng-submit="falsePos.calculate(paramsForm)">
+  <form name="paramsForm" ng-submit="falsePosCtrl.calculate(paramsForm)">
     <md-input-container flex>
       <label>Function</label>
-      <input required name="fn" ng-model="falsePos.params.fn">
+      <input required name="fn" ng-model="falsePosCtrl.params.fn">
       <div ng-messages="paramsForm.fn.$error">
         <div ng-message="required">This is required.</div>
       </div>
@@ -11,14 +11,14 @@
     <div layout="row">
       <md-input-container flex>
         <label>Value of a</label>
-        <input required name="a" ng-model="falsePos.params.a">
+        <input required name="a" ng-model="falsePosCtrl.params.a">
         <div ng-messages="paramsForm.a.$error">
           <div ng-message="required">a is required.</div>
         </div>
       </md-input-container flex>
       <md-input-container flex>
         <label>Value of b</label>
-        <input required name="b" ng-model="falsePos.params.b">
+        <input required name="b" ng-model="falsePosCtrl.params.b">
         <div ng-messages="paramsForm.b.$error">
           <div ng-message="required">b is required.</div>
         </div>
@@ -27,18 +27,18 @@
     <div layout="row">
       <md-input-container flex>
         <label>Maximum itereations</label>
-        <input ng-model="falsePos.params.nmax">
+        <input ng-model="falsePosCtrl.params.nmax">
         <div ng-messages="paramsForm.a.$error">
           <div ng-message="required">This is required.</div>
         </div>
       </md-input-container>
       <md-input-container flex>
         <label>Tolerance (optional)</label>
-        <input ng-model="falsePos.params.tol">
+        <input ng-model="falsePosCtrl.params.tol">
       </md-input-container>
       <md-input-container flex>
         <label>Delta (optional)</label>
-        <input ng-model="falsePos.params.delta">
+        <input ng-model="falsePosCtrl.params.delta">
       </md-input-container>
     </div>
     <div layout="row" layout-wrap>
@@ -49,17 +49,17 @@
   </form>
   <div layout="column" flex-sm="100" flex="33" layout-align="center center">
     <md-menu md-offset="0 -5">
-      <md-button aria-label="Open demo menu" ng-click="falsePos.openMethodsMenu($mdOpenMenu, $event)">
+      <md-button aria-label="Open demo menu" ng-click="falsePosCtrl.openMethodsMenu($mdOpenMenu, $event)">
         Try another method
       </md-button>
       <md-menu-content width="4">
-        <md-menu-item ng-repeat="method in falsePos.availableMethods">
-          <md-button ng-click="falsePos.onMethodSelected(method)"> {{ method | uppercase }} </md-button>
+        <md-menu-item ng-repeat="method in falsePosCtrl.availableMethods">
+          <md-button ng-click="falsePosCtrl.onMethodSelected(method)"> {{ method | uppercase }} </md-button>
         </md-menu-item>
       </md-menu-content>
     </md-menu>
   </div>
-  <div ng-show="falsePos.results.length > 0">
+  <div ng-show="falsePosCtrl.results.length > 0">
     <md-data-table-toolbar>
       <h2 class="md-title">Results</h2>
     </md-data-table-toolbar>
@@ -74,7 +74,7 @@
           </tr>
         </thead>
         <tbody>
-          <tr ng-repeat="result in falsePos.results">
+          <tr ng-repeat="result in falsePosCtrl.results">
             <td>{{ $index + 1 }}</td>
             <td>{{ result.x }}</td>
             <td>{{ result.fx }}</td>
@@ -85,7 +85,7 @@
     </md-data-table-container>
   </div>
   <div layout layout-align="center center">
-    <md-button ng-click="falsePos.toggleInfo()">Info</md-button>
+    <md-button ng-click="falsePosCtrl.toggleInfo()">Info</md-button>
   </div>
 
   <md-sidenav class="md-sidenav-right md-whiteframe-z2" md-component-id="info">
@@ -102,7 +102,7 @@
       <md-button ng-href="https://en.wikipedia.org/wiki/False_position_method" target="_blank">
         Learn more
       </md-button>
-      <md-button ng-click="falsePos.closeInfo()" class="md-primary">
+      <md-button ng-click="falsePosCtrl.closeInfo()" class="md-primary">
         Got it
       </md-button>
     </md-content>

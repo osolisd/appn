@@ -3,7 +3,7 @@ angular.module('numerical-analysis')
   $stateProvider.state('methods.false-position', {
     url : '/false-position',
     templateUrl : 'views/methods/false-position/false-position.html',
-    controller : 'FalsePositionCtrl as falsePos',
+    controller : 'FalsePositionCtrl as falsePosCtrl',
     params : {
       fn : null
     }
