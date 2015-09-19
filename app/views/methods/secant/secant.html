@@ -1,0 +1,58 @@
+<div class="md-padding">
+	<md-content layout-padding>
+      <md-input-container>
+      	<label>Function</label>
+        <input required name="UserFunction" ng-model="secantCtrl.func">
+      </md-input-container>
+ <div layout layout-sm="column">
+      <md-input-container>
+        <label>a</label>
+        <input required name="a" ng-model="secantCtrl.a">
+      </md-input-container>
+
+      <md-input-container>
+        <label>b</label>
+        <input required name="b" ng-model="secantCtrl.b">
+      </md-input-container>
+
+      <md-input-container>
+        <label>Max number of iterations</label>
+        <input required name="nmax" ng-model="secantCtrl.nmax">
+      </md-input-container>
+
+      <md-input-container>
+        <label>Tolerancy</label>
+        <input required name="tol" ng-model="secantCtrl.tol">
+      </md-input-container>
+
+      <md-input-container>
+        <label>Delta</label>
+        <input required name="delta" ng-model="secantCtrl.delta">
+      </md-input-container>
+</div>
+
+    <md-button ng-click="secantCtrl.Calculate()" class="md-raised md-primary">Calculate</md-button>
+    <h1>x = {{secantCtrl.result}}</h1>
+    <h1>It stopped because: {{secantCtrl.reason}}</h1>
+
+    <md-data-table-toolbar>
+    <h2 class="md-title">Results</h2>
+    </md-data-table-toolbar>
+    <md-data-table-container>
+    <table md-data-table md-progress="deferred">
+      <thead>
+        <tr>
+          <th>x</th>
+          <th>f(x)</th>
+          <th>Error</th>
+        </tr>
+      </thead>
+      <tr ng-repeat="x in secantCtrl.arrx track by $index">
+        <td>{{x}}</td>
+        <td>{{secantCtrl.arrf[$index]}}</td>
+        <td>{{secantCtrl.arrError[$index]}}</td>
+      </tr>
+    </md-data-table-container>
+    </table>
+  </md-content>
+</div>
