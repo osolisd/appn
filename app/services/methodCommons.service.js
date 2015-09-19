@@ -7,7 +7,7 @@ angular.module('numerical-analysis')
   }
 
   function getAvailableMethods(){
-    return ['bisection', 'false position'];
+    return ['bisection', 'false position', 'Newton'];
   }
 
   return {
