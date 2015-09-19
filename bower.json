@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "homepage": "https://github.com/castillobg/numerical-analysis",
   "authors": [
-    "castillobg"
+    "castillobg,felilondocho"
   ],
   "description": "An app that features multiple numerical analysis methods, for our Numerical Analysis class, ST0256.",
   "main": "main.js",
