@@ -24,8 +24,9 @@ angular.module('numerical-analysis')
       err = Math.abs(x - q);
 	  q = x;
       currentValue[varName] = x;
-      data.push(angular.merge({ fx : y, error : err }, { fdr : ydr }, currentValue));     
-	  
+      data.push(angular.merge({ fx : y, error : err }, { fdr : ydr }, currentValue));  
+
+		i = i + 1;	  
     }
     return data;
   }
