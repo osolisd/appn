@@ -19,15 +19,15 @@ angular.module('numerical-analysis')
 		var h = 1;
 		var q = 0;
 		arrx = [a,b];
-		arrf = [eval(func,a).toExponential(3),eval(func,b).toExponential(3)];
+		arrf = [eval(func,a).toExponential(),eval(func,b).toExponential()];
 		while((i < nmax) && (error > tol) && (h > delta)){
 			x = Number(b) - ((eval(func,Number(b)))*(Number(b)-Number(a))/(eval(func,Number(b))-eval(func,Number(a))));
-			arrx.push(x.toExponential(3));
+			arrx.push(x.toExponential());
 			h = Math.abs(eval(func,x));
 			error = Math.abs(Number(x) - Number(q));
-			arrError.push((error.toExponential(3)));
+			arrError.push((error.toExponential()));
 			var tempx = eval(func,Number(x));
-			arrf.push(Number(tempx.toExponential(3)));
+			arrf.push(Number(tempx.toExponential()));
 			a = Number(b);
 			b = Number(x);
 			q = x;

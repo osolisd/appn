@@ -42,12 +42,14 @@
     <table md-data-table md-progress="deferred">
       <thead>
         <tr>
+          <th>i</th>
           <th>x</th>
           <th>f(x)</th>
           <th>Error</th>
         </tr>
       </thead>
       <tr ng-repeat="x in secantCtrl.arrx track by $index">
+        <td>{{$index}}</td>
         <td>{{x}}</td>
         <td>{{secantCtrl.arrf[$index]}}</td>
         <td>{{secantCtrl.arrError[$index]}}</td>
