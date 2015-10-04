@@ -1,8 +1,8 @@
 angular.module('numerical-analysis')
 .config(function($stateProvider){
-  $stateProvider.state('methods.false-position', {
+  $stateProvider.state('methods.non-lineal.false-position', {
     url : '/false-position',
-    templateUrl : 'views/methods/false-position/false-position.html',
+    templateUrl : 'views/methods/non-lineal/false-position/false-position.html',
     controller : 'FalsePositionCtrl as falsePosCtrl',
     params : {
       fn : null

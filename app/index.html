@@ -10,7 +10,9 @@
   <body ng-app="numerical-analysis">
     <md-toolbar>
       <div class="md-toolbar-tools">
-        <h2 class="md-flex">Numerical analysis app</h2>
+        <a ui-sref="home">
+          <h2 class="md-flex" ui-sref="home">Numerical analysis app</h2>
+        </a>
       </div>
     </md-toolbar>
     <div ui-view></div>
@@ -37,13 +39,14 @@
     <script src="views/home/home.config.js" type="text/javascript"></script>
     <script src="views/home/home.ctrl.js" type="text/javascript"></script>
     <script src="views/methods/methods.config.js" type="text/javascript"></script>
-    <script src="views/methods/bisection/bisection.config.js" type="text/javascript"></script>
-    <script src="views/methods/bisection/bisection.ctrl.js" type="text/javascript"></script>
-    <script src="views/methods/false-position/false-position.config.js" type="text/javascript"></script>
-    <script src="views/methods/false-position/false-position.ctrl.js" type="text/javascript"></script>
-    <script src="views/methods/newton/newton.config.js" type="text/javascript"></script>
-    <script src="views/methods/newton/newton.ctrl.js" type="text/javascript"></script>
-    <script src="views/methods/secant/secant.config.js" type="text/javascript"></script>
-    <script src="views/methods/secant/secant.ctrl.js" type="text/javascript"></script>
+    <script src="views/methods/non-lineal/non-lineal.config.js" type="text/javascript"></script>
+    <script src="views/methods/non-lineal/bisection/bisection.config.js" type="text/javascript"></script>
+    <script src="views/methods/non-lineal/bisection/bisection.ctrl.js" type="text/javascript"></script>
+    <script src="views/methods/non-lineal/false-position/false-position.config.js" type="text/javascript"></script>
+    <script src="views/methods/non-lineal/false-position/false-position.ctrl.js" type="text/javascript"></script>
+    <script src="views/methods/non-lineal/newton/newton.config.js" type="text/javascript"></script>
+    <script src="views/methods/non-lineal/newton/newton.ctrl.js" type="text/javascript"></script>
+    <script src="views/methods/non-lineal/secant/secant.config.js" type="text/javascript"></script>
+    <script src="views/methods/non-lineal/secant/secant.ctrl.js" type="text/javascript"></script>
   </body>
 </html>

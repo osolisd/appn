@@ -1,8 +1,8 @@
 angular.module('numerical-analysis')
 .config(function($stateProvider){
-	$stateProvider.state('methods.secant', {
+	$stateProvider.state('methods.non-lineal.secant', {
     url: '/secant',
-    templateUrl: 'views/methods/secant/secant.html',
+    templateUrl: 'views/methods/non-lineal/secant/secant.html',
     controller: 'SecantCrtl as secantCtrl'
   });
 })

@@ -31,7 +31,7 @@ angular.module('numerical-analysis')
   };
 
   self.onMethodSelected = function(method){
-    $state.go('methods.' + method.replace(/\s/g, '-'), { fn: self.params.fn });
+    $state.go('methods.non-lineal.' + method.replace(/\s/g, '-'), { fn: self.params.fn });
   }
 
   self.toggleInfo = $mdUtil.debounce(function(){
@@ -46,10 +46,10 @@ angular.module('numerical-analysis')
 
   function initParams() {
     self.params = {};
-    self.params.fn = $stateParams.fn || 'exp(x) + 3 * sin(x) - (x^3) + 4 * x - 2';
+    self.params.fn = $stateParams.fn || '';
     self.params.varName = $stateParams.x || 'x';
-    self.params.a = $stateParams.a || -2;
-    self.params.b = $stateParams.b || -3;
+    self.params.a = $stateParams.a || 0;
+    self.params.b = $stateParams.b || 0;
     self.params.nmax = $stateParams.nmax || 100;
     self.params.tol = $stateParams.tol || 0.0;
     self.params.delta = $stateParams.delta || 0.0;

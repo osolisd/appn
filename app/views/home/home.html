@@ -2,11 +2,37 @@
   <p class="inset" layout layout-align="center center">
     Select a method
   </p>
-
-  <md-button class="md-raised md-primary" ui-sref="methods.bisection">Bisection</md-button>
-  <md-button class="md-raised md-primary" ui-sref="methods.false-position">False position</md-button>
-  <md-button class="md-raised md-primary" ui-sref="methods.newton">Newton</md-button>
-  <md-button class="md-raised md-primary" ui-sref="methods.secant">Secant</md-button>
+  <div layout="row" flex-sm="100" flex="33" layout-align="center center">
+    <md-menu md-offset="0 -5">
+      <md-button class="md-raised" aria-label="Open menu" ng-click="home.openMethodsMenu($mdOpenMenu, $event)">
+        Non-lineal
+      </md-button>
+      <md-menu-content width="4">
+        <md-menu-item>
+          <md-button ui-sref="methods.non-lineal.bisection">Bisection</md-button>
+        </md-menu-item>
+        <md-menu-item>
+          <md-button ui-sref="methods.non-lineal.false-position">False position</md-button>
+        </md-menu-item>
+        <md-menu-item>
+          <md-button ui-sref="methods.non-lineal.newton">Newton</md-button>
+        </md-menu-item>
+        <md-menu-item>
+          <md-button ui-sref="methods.non-lineal.secant">Secant</md-button>
+        </md-menu-item>
+      </md-menu-content>
+    </md-menu>
+    <md-menu md-offset="0 -5">
+      <md-button class="md-raised" aria-label="Open menu" ng-click="home.openMethodsMenu($mdOpenMenu, $event)">
+        Lineal
+      </md-button>
+      <md-menu-content width="4">
+        <md-menu-item>
+          <md-button>Method 1</md-button>
+        </md-menu-item>
+      </md-menu-content>
+    </md-menu>
+  </div>
 
   <div layout layout-align="center center">
     <md-button ng-click="home.toggleInfo()">Info</md-button>
