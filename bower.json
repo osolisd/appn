@@ -14,6 +14,7 @@
     "angular-material-data-table": "~0.8.11",
     "angular-messages": "1.4.5",
     "js-expression-eval": "https://github.com/silentmatt/js-expression-eval.git",
+    "sylvester": "https://github.com/jcoglan/sylvester.git",
     "ui-router": "0.2.15"
   },
   "keywords": [
