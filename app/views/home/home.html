@@ -7,7 +7,7 @@
       <md-button class="md-raised" aria-label="Open menu" ng-click="home.openMethodsMenu($mdOpenMenu, $event)">
         Non-lineal
       </md-button>
-      <md-menu-content width="4">
+      <md-menu-content width="5">
         <md-menu-item>
           <md-button ui-sref="methods.non-lineal.bisection">Bisection</md-button>
         </md-menu-item>
@@ -20,6 +20,9 @@
         <md-menu-item>
           <md-button ui-sref="methods.non-lineal.secant">Secant</md-button>
         </md-menu-item>
+          <md-menu-item>
+              <md-button ui-sref="methods.non-lineal.fixedPoint">Fixed Point</md-button>
+          </md-menu-item>
       </md-menu-content>
     </md-menu>
     <md-menu md-offset="0 -5">
