@@ -1,7 +1,34 @@
-<div>
-  <input type="file" fileread="jacobi.file"></input>
-
-  {{jacobi.file}}
-  <button ng-click="jacobi.calculate()">CLICK ME</button>
-
+<div class="md-padding" layout="column">
+  <h2 class="md-title">Jacobi</h2>
+  <form name="paramsForm" ng-submit="jacobi.calculate(paramsForm)">
+    <div layout="row"><md-input-container flex>
+      <input type="file" fileread="jacobi.matAStr" accept=".csv" required>Matrix A CSV file</input>
+    </md-input-container>
+    <md-input-container flex>
+      <input type="file" fileread="jacobi.vectBStr" accept=".csv" required>Vector b CSV file</input>
+    </md-input-container>
+    <md-input-container flex>
+      <input type="file" fileread="jacobi.vectXStr" accept=".csv" required>Vector x CSV file</input>
+    </md-input-container>
+    </div>
+    <div layout="row">
+      <md-input-container flex>
+        <label>Maximum itereations</label>
+        <input ng-model="jacobi.options.nmax">
+      </md-input-container>
+      <md-input-container flex>
+        <label>Tolerance (optional)</label>
+        <input ng-model="jacobi.options.tol">
+      </md-input-container>
+      <md-input-container flex>
+        <label>Delta (optional)</label>
+        <input ng-model="jacobi.options.delta">
+      </md-input-container>
+    </div>
+    <div layout="row" layout-wrap>
+      <md-button class="md-raised md-primary" flex type="submit">
+        Evaluate
+      </md-button>
+    </div>
+  </form>
 </div>
