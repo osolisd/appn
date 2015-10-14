@@ -18,20 +18,29 @@ angular.module('numerical-analysis')
 
     var matT = invD.multiply(matL.add(matU));
     var vectC = invD.multiply(vectB);
+    var results = [];
 
     for(var i = 0; i < nmax; i++){
       var currentX = matT.multiply(vectX).add(vectC);
+      var error = currentX.subtract(vectX).modulus();
 
-      if(matA.multiply(currentX).subtract(vectB).modulus() < delta
-      || currentX.subtract(vectX).modulus() < tol) {
+      if(matA.multiply(currentX).subtract(vectB).modulus() <= delta || error <= tol) {
 
-        return currentX.elements;
+        results.push({
+          x : currentX.elements,
+          'error' : error
+        });
+        return results;
       }
 
       vectX = currentX;
+      results.push({
+        x : currentX.elements,
+        'error' : error
+      });
     }
 
-    return currentX.elements;
+    return results;
   }
 
   return {

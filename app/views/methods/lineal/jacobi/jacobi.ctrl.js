@@ -20,7 +20,7 @@ angular.module('numerical-analysis')
     var vectB = Utils.parseCSV(self.vectBStr, '\n', ';')[0].map(parseFloat);
     var vectX = Utils.parseCSV(self.vectXStr, '\n', ';')[0].map(parseFloat);
 
-    self.res =
+    self.results =
       Jacobi.calculate(matA, vectB, vectX, self.options.nmax, self.options.delta, self.options.tol);
   };
 })
