@@ -14,7 +14,7 @@ angular.module('numerical-analysis')
     while (i < nmax && Math.abs(y) > delta && err > tol) {
       var x = (a + b) / 2;
       variables[varName] = x;
-      y = MethodCommons.evaluate(fn, variables)
+      y = MethodCommons.evaluate(fn, variables);
       err = Math.abs(x - q);
       var currentValue = {};
       currentValue[varName] = x;
