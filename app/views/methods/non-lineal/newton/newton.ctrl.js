@@ -21,7 +21,8 @@ angular.module('numerical-analysis')
       self.params.varName,
       self.params.a,
       self.params.nmax,
-      self.params.tol || 0.0);
+      self.params.tol || 0.0,
+	  self.params.delta || 0.0);
   };
 
   self.openMethodsMenu = function($mdOpenMenu, ev) {
@@ -51,5 +52,6 @@ angular.module('numerical-analysis')
     self.params.a = $stateParams.a || 0;
     self.params.nmax = $stateParams.nmax || 100;
     self.params.tol = $stateParams.tol || 0.0;
+    self.params.delta = 0.0;
   }
 });
