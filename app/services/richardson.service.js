@@ -13,6 +13,8 @@ angular.module('numerical-analysis')
 
     var matT = matA.add(matI);
     var vectC = vectB.multiply(-1);
+	
+	
 
     var i=0
 
