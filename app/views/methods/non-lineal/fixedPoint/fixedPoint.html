@@ -44,16 +44,7 @@
         </div>
     </form>
     <div layout="column" flex-sm="100" flex="33" layout-align="center center">
-        <md-menu md-offset="0 -5">
-            <md-button aria-label="Open demo menu" ng-click="fixedPointCtrl.openMethodsMenu($mdOpenMenu, $event)">
-                Try another method
-            </md-button>
-            <md-menu-content width="4">
-                <md-menu-item ng-repeat="method in fixedPointCtrl.availableMethods">
-                    <md-button ng-click="fixedPointCtrl.onMethodSelected(method)"> {{ method | uppercase }} </md-button>
-                </md-menu-item>
-            </md-menu-content>
-        </md-menu>
+      <non-lineal-menu>
     </div>
     <div ng-show="fixedPointCtrl.results.length > 0">
         <md-data-table-toolbar>

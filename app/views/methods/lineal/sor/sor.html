@@ -40,21 +40,9 @@
       </md-button>
     </div>
   </form>
-   <!--
-      <div ng-repeat="x in gaussseidel.results track by $index">
-        <h1>{{$index+1}}</h1>
-        <div ng-repeat="y in x.elements">
-          <h1>{{y}}</h1>
-        </div>
-      </div>
-
-<table>
-  <tr ng-repeat="x in gaussseidel.results track by $index">
-    <th>{{$index+1}}</th>
-    <th ng-repeat="y in x.elements">{{y}}</th>
-  </tr>
-</table>
--->
+  <div layout="column" flex-sm="100" flex="33" layout-align="center center">
+    <lineal-menu>
+  </div>
     <h1 >Reason: {{sor.reason}}</h1>
     <md-data-table-toolbar>
         <h2 class="md-title">Results</h2>

@@ -13,10 +13,6 @@ angular.module('numerical-analysis')
     300
   );
 
-  self.openMethodsMenu = function($mdOpenMenu, ev) {
-    $mdOpenMenu(ev);
-  };
-
   self.closeInfo = function () {
     $mdSidenav('info').close();
   };

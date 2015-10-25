@@ -3,40 +3,8 @@
     Select a method
   </p>
   <div layout="row" flex-sm="100" flex="33" layout-align="center center">
-    <md-menu md-offset="0 -5">
-      <md-button class="md-raised" aria-label="Open menu" ng-click="home.openMethodsMenu($mdOpenMenu, $event)">
-        Non-lineal
-      </md-button>
-      <md-menu-content width="5">
-        <md-menu-item>
-          <md-button ui-sref="methods.non-lineal.bisection">Bisection</md-button>
-        </md-menu-item>
-        <md-menu-item>
-          <md-button ui-sref="methods.non-lineal.false-position">False position</md-button>
-        </md-menu-item>
-        <md-menu-item>
-          <md-button ui-sref="methods.non-lineal.newton">Newton</md-button>
-        </md-menu-item>
-        <md-menu-item>
-          <md-button ui-sref="methods.non-lineal.secant">Secant</md-button>
-        </md-menu-item>
-          <md-menu-item>
-              <md-button ui-sref="methods.non-lineal.fixedPoint">Fixed Point</md-button>
-          </md-menu-item>
-      </md-menu-content>
-    </md-menu>
-    <md-menu md-offset="0 -5">
-      <md-button class="md-raised" aria-label="Open menu" ng-click="home.openMethodsMenu($mdOpenMenu, $event)">
-        Lineal
-      </md-button>
-      <md-menu-content width="4">
-        <md-menu-item>
-          <md-button ui-sref="methods.lineal.jacobi">Jacobi</md-button>
-          <md-button ui-sref="methods.lineal.sor">S.O.R</md-button>
-		  <md-button ui-sref="methods.lineal.richardson">Richardson</md-button>
-        </md-menu-item>
-      </md-menu-content>
-    </md-menu>
+    <non-lineal-menu></non-lineal-menu>
+    <lineal-menu></lineal-menu>
   </div>
 
   <div layout layout-align="center center">

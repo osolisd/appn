@@ -1,7 +1,7 @@
 <div class="md-padding">
-	<md-content layout-padding>
+  <md-content layout-padding>
       <md-input-container>
-      	<label>Function</label>
+        <label>Function</label>
         <input required name="UserFunction" ng-model="secantCtrl.func">
       </md-input-container>
  <div layout layout-sm="column">
@@ -30,8 +30,12 @@
         <input required name="delta" ng-model="secantCtrl.delta">
       </md-input-container>
 </div>
-
     <md-button ng-click="secantCtrl.Calculate()" class="md-raised md-primary">Calculate</md-button>
+
+    <div layout="column" flex-sm="100" flex="33" layout-align="center center">
+      <non-lineal-menu>
+    </div>
+
     <h1>x = {{secantCtrl.result}}</h1>
     <h1>It stopped because: {{secantCtrl.reason}}</h1>
 
