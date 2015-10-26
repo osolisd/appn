@@ -53,12 +53,14 @@
         <tr>
           <th numeric name="Iteration"></th>
           <th numeric name="x vector"></th>
+          <th numeric name="Delta"></th>
           <th numeric name="Error"></th>
         </tr>
       </thead>
       <tr ng-repeat="x in sor.res">
         <td>{{$index+1}}</td>
         <td>{{x.x}}</td>
+        <td>{{x.delta}}</td>
         <td>{{x.error}}</td>
       </tr>
     </md-data-table-container>

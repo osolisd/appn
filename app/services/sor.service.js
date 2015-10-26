@@ -41,7 +41,8 @@ angular.module('numerical-analysis')
           }
         results.push({
           x : currentX.elements,
-          'error' : error
+          'error' : error,
+          'delta' : matA.multiply(currentX).subtract(vectB).modulus()
         });
         return results;
       }
@@ -49,7 +50,8 @@ angular.module('numerical-analysis')
       vectX = currentX;
       results.push({
         x : currentX.elements,
-        'error' : error
+        'error' : error,
+        'delta' : matA.multiply(currentX).subtract(vectB).modulus()
       });
     }
     if(i==nmax){
