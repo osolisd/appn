@@ -23,12 +23,13 @@ angular.module('numerical-analysis')
     for(var i = 0; i < nmax; i++){
       var currentX = matT.multiply(vectX).add(vectC);
       var error = currentX.subtract(vectX).modulus();
+      var curDelta = matA.multiply(currentX).subtract(vectB).modulus();
 
-      if(matA.multiply(currentX).subtract(vectB).modulus() <= delta || error <= tol) {
-
+      if(curDelta <= delta || error <= tol) {
         results.push({
           x : currentX.elements,
-          'error' : error
+          'error' : error,
+          'delta' : curDelta
         });
         return results;
       }
@@ -36,7 +37,8 @@ angular.module('numerical-analysis')
       vectX = currentX;
       results.push({
         x : currentX.elements,
-        'error' : error
+        'error' : error,
+        'delta' : curDelta
       });
     }
 
