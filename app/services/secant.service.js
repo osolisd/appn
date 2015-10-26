@@ -10,6 +10,7 @@ angular.module('numerical-analysis')
   var arrx = [];
   var arrf = [];
   var arrError = [null,null];
+  var arrDelta = [null,null];
   var reason = "";
   var i = 0;
 
@@ -24,6 +25,7 @@ angular.module('numerical-analysis')
       x = Number(b) - ((eval(func,Number(b)))*(Number(b)-Number(a))/(eval(func,Number(b))-eval(func,Number(a))));
       arrx.push(x.toExponential());
       h = Math.abs(eval(func,x));
+      arrDelta.push(h.toExponential());
       error = Math.abs(Number(x) - Number(q));
       arrError.push((error.toExponential()));
       var tempx = eval(func,Number(x));
@@ -61,6 +63,10 @@ angular.module('numerical-analysis')
   function getReason(){
     return reason;
   }
+  function getDelta(){
+    return arrDelta;
+  }
+
 
   return{
     'CalculateBySecant' : CalculateBySecant,
@@ -69,7 +75,8 @@ angular.module('numerical-analysis')
     'getfx' : getfx,
     'getError' : getError,
     'geti' : geti,
-    'getReason' : getReason
+    'getReason' : getReason,
+    'getDelta' : getDelta
 
   };
 
