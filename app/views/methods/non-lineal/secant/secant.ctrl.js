@@ -9,6 +9,7 @@ angular.module('numerical-analysis')
     self.arrx = Secant.getx();
     self.arrf = Secant.getfx();
     self.arrError = Secant.getError();
+    self.arrDelta = Secant.getDelta();
   }
 
 })
