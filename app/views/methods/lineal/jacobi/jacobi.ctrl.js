@@ -23,4 +23,4 @@ angular.module('numerical-analysis')
     self.results =
       Jacobi.calculate(matA, vectB, vectX, self.options.nmax, self.options.delta, self.options.tol);
   };
-})
+});
