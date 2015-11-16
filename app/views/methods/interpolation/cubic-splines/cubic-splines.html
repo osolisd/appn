@@ -3,11 +3,17 @@
   <form name="paramsForm" ng-submit="cubicSplines.calculate(paramsForm)">
     <div layout="row">
       <md-input-container flex>
-        <input type="file" aria-label="xs file" fileread="cubicSplines.xs" accept=".csv">Xs vector CSV file</input>
+        <input type="file" aria-label="xs file" fileread="cubicSplines.xsStr" required accept=".csv">Xs vector CSV file</input>
       </md-input-container>
       <md-input-container flex>
-        <input type="file" aria-label="ys file" fileread="cubicSplines.ys" accept=".csv">Ys vector CSV file</input>
+        <input type="file" aria-label="ys file" fileread="cubicSplines.ysStr" required accept=".csv">Ys vector CSV file</input>
       </md-input-container>
+    </div>
+    <div layout="row" flex layout-wrap>
+      <p>
+        <b>Note:</b> Splines will have the form
+        <b><i>a + b(x - xj) + c(x - xj)<sup>2</sup> + d(x - xj)<sup>3</sup></i></b>.
+      </p>
     </div>
     <div layout="row" layout-wrap>
       <md-button class="md-raised md-primary" flex type="submit">
@@ -19,12 +25,8 @@
     <lineal-menu>
   </div>
   <div ng-show="cubicSplines.results.length > 0">
-    <p>
-      <b>Note:</b> Splines have the form
-      <b><i>a + b(x - xj) + c(x - xj)<sup>2</sup> + d(x - xj)<sup>3</sup></i></b>.
-    </p>
     <div ng-repeat="res in cubicSplines.results">
-      <h3>Spline<sub>{{$index + 1}}</sub>: {{res.desc}}</h3>
+      <p>S<sub>{{$index + 1}}</sub>: {{res.desc}}</p>
       <p><b>{{res.spline}}</b></p>
     </div>
   </div>
