@@ -1,15 +1,16 @@
 <div class="md-padding" layout="column">
   <h2 class="md-title">Jacobi</h2>
   <form name="paramsForm" ng-submit="jacobi.calculate(paramsForm)">
-    <div layout="row"><md-input-container flex>
-      <input type="file" aria-label="A file" fileread="jacobi.matAStr" accept=".csv" required>Matrix A CSV file</input>
-    </md-input-container>
-    <md-input-container flex>
-      <input type="file" aria-label="b file" fileread="jacobi.vectBStr" accept=".csv" required>Vector b CSV file</input>
-    </md-input-container>
-    <md-input-container flex>
-      <input type="file" aria-label="x file" fileread="jacobi.vectXStr" accept=".csv" required>Vector x CSV file</input>
-    </md-input-container>
+    <div layout="row">
+      <md-input-container flex>
+        <input type="file" aria-label="A file" fileread="jacobi.matAStr" accept=".csv" required>Matrix A CSV file</input>
+      </md-input-container>
+      <md-input-container flex>
+        <input type="file" aria-label="b file" fileread="jacobi.vectBStr" accept=".csv" required>Vector b CSV file</input>
+      </md-input-container>
+      <md-input-container flex>
+        <input type="file" aria-label="x file" fileread="jacobi.vectXStr" accept=".csv" required>Vector x CSV file</input>
+      </md-input-container>
     </div>
     <div layout="row">
       <md-input-container flex>
