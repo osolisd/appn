@@ -1,6 +1,8 @@
 angular.module('numerical-analysis')
-.controller('SecantCrtl',function(Secant){
+.controller('SecantCrtl',function(Secant, $stateParams){
   var self = this;
+
+  self.func = $stateParams.fn || '';
 
   self.Calculate = function calculatebysecant(){
     Secant.CalculateBySecant(self.func,self.a,self.b,self.nmax,self.tol,self.delta);

@@ -4,19 +4,19 @@
   </md-button>
   <md-menu-content width="5">
     <md-menu-item>
-      <md-button ui-sref="methods.non-lineal.bisection">Bisection</md-button>
+      <md-button ng-click="goTo('methods.non-lineal.bisection', {'fn': fn})">Bisection</md-button>
     </md-menu-item>
     <md-menu-item>
-      <md-button ui-sref="methods.non-lineal.false-position">False position</md-button>
+      <md-button ng-click="goTo('methods.non-lineal.false-position', {'fn': fn})">False position</md-button>
     </md-menu-item>
     <md-menu-item>
-      <md-button ui-sref="methods.non-lineal.newton">Newton</md-button>
+      <md-button ng-click="goTo('methods.non-lineal.newton', {'fn': fn})">Newton</md-button>
     </md-menu-item>
     <md-menu-item>
-      <md-button ui-sref="methods.non-lineal.secant">Secant</md-button>
+      <md-button ng-click="goTo('methods.non-lineal.secant', {'fn': fn})">Secant</md-button>
     </md-menu-item>
       <md-menu-item>
-        <md-button ui-sref="methods.non-lineal.fixedPoint">Fixed Point</md-button>
+        <md-button ng-click="goTo('methods.non-lineal.fixedPoint', {'fn': fn})">Fixed Point</md-button>
       </md-menu-item>
   </md-menu-content>
 </md-menu>
