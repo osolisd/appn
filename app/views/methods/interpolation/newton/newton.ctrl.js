@@ -3,17 +3,19 @@ angular.module('numerical-analysis')
 
         var self = this;
 
-        self.results = [];
+        self.results;
 
-        self.xs = [50, 200, 350];
-        self.ys = [50, 149.49363435889023, 249.12670270278602];
+        self.xsStr = null;
+        self.ysStr = null;
 
         self.calculate = function () {
-            var res = NewtonInterpolation.calculate(self.xs, self.ys);
-            for(var i = 0; i < res.length; i++) {
-                var result = {};
 
-            }
-            console.log();
+            var xs = Utils.parseCSV(self.xsStr, '\n', ';')[0].map(parseFloat);
+            var ys = Utils.parseCSV(self.ysStr, '\n', ';')[0].map(parseFloat);
+            var res = NewtonInterpolation.calculate(xs, ys);
+
+            self.results = res;
         };
+
+
     });

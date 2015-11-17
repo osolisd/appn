@@ -3,10 +3,10 @@
     <form name="paramsForm" ng-submit="newtonInterpolation.calculate(paramsForm)">
         <div layout="row">
             <md-input-container flex>
-                <input type="file" aria-label="xs file" fileread="newtonInterpolation.xs" accept=".csv">Xs vector CSV file</input>
+                <input type="file" aria-label="xs file" fileread="newtonInterpolation.xsStr" accept=".csv">Xs vector CSV file</input>
             </md-input-container>
             <md-input-container flex>
-                <input type="file" aria-label="ys file" fileread="newtonInterpolation.ys" accept=".csv">Ys vector CSV file</input>
+                <input type="file" aria-label="ys file" fileread="newtonInterpolation.ysStr" accept=".csv">Ys vector CSV file</input>
             </md-input-container>
         </div>
         <div layout="row" layout-wrap>
@@ -16,3 +16,6 @@
         </div>
     </form>
 </div>
+<div ng-show="newtonInterpolation.results">
+</div>
+
