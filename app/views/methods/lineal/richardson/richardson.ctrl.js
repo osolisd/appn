@@ -6,8 +6,6 @@
   self.fileb = null;
   self.filex = null;
 
-  self.reason = ""
-
 
   self.calculate = function () {
 
@@ -15,16 +13,11 @@
       return row.map(parseFloat);
     });
 	
-	var matI = Utils.parseCSV(self.fileI, '\n', ';').map(function (row) {
-      return row.map(parseFloat);
-    });
-	
     var vectB = Utils.parseCSV(self.fileb, '\n', ';')[0].map(parseFloat);
     
     var vectX = Utils.parseCSV(self.filex, '\n', ';')[0].map(parseFloat);
 
-    self.res = Richardson.calculate(matA, matI, vectB, vectX, self.nmax, self.delta, self.tol);
-    self.reason = Richardson.getReason();
+    self.res = Richardson.calculate(matA, vectB, vectX, self.nmax, self.delta, self.tol);
   }
 
   self.toggleInfo = $mdUtil.debounce(function(){
