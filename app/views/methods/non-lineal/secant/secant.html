@@ -1,39 +1,41 @@
-<div class="md-padding">
+<div class="md-padding" layout="column">
   <md-content layout-padding>
       <md-input-container>
         <label>Function</label>
         <input required name="UserFunction" ng-model="secantCtrl.func">
       </md-input-container>
- <div layout layout-sm="column">
-      <md-input-container>
-        <label>a</label>
-        <input required name="a" ng-model="secantCtrl.a">
-      </md-input-container>
+     <form ng-submit="secantCtrl.Calculate()">
+       <md-input-container>
+         <label>a</label>
+         <input required name="a" ng-model="secantCtrl.a">
+       </md-input-container>
 
-      <md-input-container>
-        <label>b</label>
-        <input required name="b" ng-model="secantCtrl.b">
-      </md-input-container>
+       <md-input-container>
+         <label>b</label>
+         <input required name="b" ng-model="secantCtrl.b">
+       </md-input-container>
 
-      <md-input-container>
-        <label>Max number of iterations</label>
-        <input required name="nmax" ng-model="secantCtrl.nmax">
-      </md-input-container>
+       <md-input-container>
+         <label>Max number of iterations</label>
+         <input required name="nmax" ng-model="secantCtrl.nmax">
+       </md-input-container>
 
-      <md-input-container>
-        <label>Tolerancy</label>
-        <input required name="tol" ng-model="secantCtrl.tol">
-      </md-input-container>
+       <md-input-container>
+         <label>Tolerancy</label>
+         <input required name="tol" ng-model="secantCtrl.tol">
+       </md-input-container>
 
-      <md-input-container>
-        <label>Delta</label>
-        <input required name="delta" ng-model="secantCtrl.delta">
-      </md-input-container>
-</div>
-    <md-button ng-click="secantCtrl.Calculate()" class="md-raised md-primary">Calculate</md-button>
+       <md-input-container>
+         <label>Delta</label>
+         <input required name="delta" ng-model="secantCtrl.delta">
+       </md-input-container>
+      <div layout="row">
+         <md-button type="submit" class="md-raised md-primary">Calculate</md-button>
+      </div>
+     </form>
 
     <div layout="column" flex-sm="100" flex="33" layout-align="center center">
-      <non-lineal-menu>
+      <non-lineal-menu fn="secantCtrl.func">
     </div>
 
     <h1>x = {{secantCtrl.result}}</h1>

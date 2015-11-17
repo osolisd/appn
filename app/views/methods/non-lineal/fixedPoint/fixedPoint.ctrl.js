@@ -49,8 +49,8 @@ angular.module('numerical-analysis')
 
         function initParams() {
             self.params = {};
-            self.params.fn = $stateParams.fn || 'exp(x) + 3 * sin(x) - (x^3) + 4 * x - 2';
-            self.params.dr = $stateParams.fn || 'exp(x) + 3 * cos(x) - 3 * (x^2) + 4';
+            self.params.fn = $stateParams.fn || '';
+            self.params.dr = '';
             self.params.varName = $stateParams.x || 'x';
             self.params.a = $stateParams.a || -2;
             self.params.nmax = $stateParams.nmax || 100;
