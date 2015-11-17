@@ -39,7 +39,6 @@
     </div>
 
     <h1>x = {{secantCtrl.result}}</h1>
-    <h1>It stopped because: {{secantCtrl.reason}}</h1>
 
     <md-data-table-toolbar>
     <h2 class="md-title">Results</h2>
@@ -51,7 +50,6 @@
           <th>i</th>
           <th>x</th>
           <th>f(x)</th>
-          <th>Delta</th>
           <th>Error</th>
         </tr>
       </thead>
@@ -59,7 +57,6 @@
         <td>{{$index}}</td>
         <td>{{x}}</td>
         <td>{{secantCtrl.arrf[$index]}}</td>
-        <td>{{secantCtrl.arrDelta[$index]}}</td>
         <td>{{secantCtrl.arrError[$index]}}</td>
       </tr>
     </md-data-table-container>
