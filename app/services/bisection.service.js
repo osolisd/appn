@@ -6,6 +6,8 @@ angular.module('numerical-analysis')
     // init everything
     var i = 0;
     var variables = {};
+	a = parseInt(a);
+	b = parseInt(b);
     variables[varName] = (a + b) / 2;
     var y = MethodCommons.evaluate(fn, variables);
     var err = 1;
