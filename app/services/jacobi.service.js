@@ -1,5 +1,5 @@
 angular.module('numerical-analysis')
-.factory('Jacobi', function bisectionService(MethodCommons){
+.factory('Jacobi', function jacobiService(MethodCommons){
   'use strict';
 
   function calculate(A, b, x, nmax, delta, tol) {

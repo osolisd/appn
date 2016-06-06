@@ -4,15 +4,17 @@
     <div layout="row">
       <md-input-container flex>
         <input type="file" aria-label="xs file" fileread="cubicSplines.xsStr" required accept=".csv">Xs vector CSV file</input>
+		<strong><i>The vector must be in row style and order by x's value</i></strong>
       </md-input-container>
       <md-input-container flex>
         <input type="file" aria-label="ys file" fileread="cubicSplines.ysStr" required accept=".csv">Ys vector CSV file</input>
+		<strong><i>The vector must be in row style and order by x's value. Click here to load files.</i></strong>
       </md-input-container>
     </div>
     <div layout="row" flex layout-wrap>
       <p>
         <b>Note:</b> Splines will have the form
-        <b><i>a + b(x - xj) + c(x - xj)<sup>2</sup> + d(x - xj)<sup>3</sup></i></b>.
+        <b><i>a + b(x - x<sub>j</sub>) + c(x - x<sub>j</sub>)<sub>2</sub> + d(x - x<sub>j</sub>)<sub>3</sub></i></b>.
       </p>
     </div>
     <div layout="row" layout-wrap>

@@ -5,6 +5,9 @@
   self.fileA = null;
   self.fileb = null;
   self.filex = null;
+  self.nmax = 100;
+  self.delta = 0;
+  self.tol = 0;
 
 
   self.calculate = function () {

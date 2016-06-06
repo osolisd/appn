@@ -2,7 +2,7 @@ angular.module('numerical-analysis')
     .factory('FixedPoint', function FixedPointService(MethodCommons){
         'use strict';
 
-        function calculate(fn, dr, varName, a, nmax, tol) {
+        function calculate(fn, dr, varName, a, nmax, tol, delta) {
             // init everything
             var i = 0;
             var variables = {};
@@ -16,7 +16,7 @@ angular.module('numerical-analysis')
             currentValue[varName] = a;
             data.push(angular.merge({ fx : y, error : err }, { fdr : ydr }, currentValue));
 
-            while (i < nmax && y != 0 && ydr != 0 && err > tol) {
+            while (i < nmax && y != 0 && ydr != 0 && Math.abs(y) > delta && err > tol) {
                 var x = q - ( y / ydr);
                 variables[varName] = x;
                 y = MethodCommons.evaluate(fn, variables)

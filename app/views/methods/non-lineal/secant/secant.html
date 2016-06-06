@@ -1,44 +1,57 @@
 <div class="md-padding" layout="column">
-  <md-content layout-padding>
-      <md-input-container>
-        <label>Function</label>
-        <input required name="UserFunction" ng-model="secantCtrl.func">
+    <h2 class="md-title">Secant</h2>
+     <form name="paramsForm" ng-submit="secantCtrl.Calculate()">
+        <md-input-container flex>
+            <label>Function</label>
+            <input required name="fn" ng-model="secantCtrl.func">
+            <div ng-messages="paramsForm.fn.$error">
+                <div ng-message="required">This is required.</div>
+            </div>
+        </md-input-container>
+    <div layout="row">
+      <md-input-container flex>
+        <label>Value of a</label>
+        <input required name="a" ng-model="secantCtrl.a">
+        <div ng-messages="paramsForm.a.$error">
+          <div ng-message="required">a is required.</div>
+        </div>
+      </md-input-container flex>
+      <md-input-container flex>
+        <label>Value of b</label>
+        <input required name="b" ng-model="secantCtrl.b">
+        <div ng-messages="paramsForm.b.$error">
+          <div ng-message="required">b is required.</div>
+        </div>
       </md-input-container>
-     <form ng-submit="secantCtrl.Calculate()">
-       <md-input-container>
-         <label>a</label>
-         <input required name="a" ng-model="secantCtrl.a">
-       </md-input-container>
-
-       <md-input-container>
-         <label>b</label>
-         <input required name="b" ng-model="secantCtrl.b">
-       </md-input-container>
-
-       <md-input-container>
-         <label>Max number of iterations</label>
-         <input required name="nmax" ng-model="secantCtrl.nmax">
-       </md-input-container>
-
-       <md-input-container>
-         <label>Tolerancy</label>
-         <input required name="tol" ng-model="secantCtrl.tol">
-       </md-input-container>
-
-       <md-input-container>
-         <label>Delta</label>
-         <input required name="delta" ng-model="secantCtrl.delta">
-       </md-input-container>
-      <div layout="row">
-         <md-button type="submit" class="md-raised md-primary">Calculate</md-button>
-      </div>
+    </div>
+    <div layout="row">
+      <md-input-container flex>
+        <label>Maximum itereations</label>
+        <input name="nmax" ng-model="secantCtrl.nmax">
+        <div ng-messages="paramsForm.a.$error">
+          <div ng-message="required">This is required.</div>
+        </div>
+      </md-input-container>
+      <md-input-container flex>
+        <label>Tolerance (optional)</label>
+        <input name="tol" ng-model="secantCtrl.tol">
+      </md-input-container>
+      <md-input-container flex>
+        <label>Delta (optional)</label>
+        <input name="delta" ng-model="secantCtrl.delta">
+      </md-input-container>
+    </div>
+    <div layout="row" layout-wrap>
+      <md-button class="md-raised md-primary" flex type="submit">
+        Evaluate
+      </md-button>
+    </div>
      </form>
 
     <div layout="column" flex-sm="100" flex="33" layout-align="center center">
       <non-lineal-menu fn="secantCtrl.func">
     </div>
-
-    <h1>x = {{secantCtrl.result}}</h1>
+  <div ng-show="secantCtrl.arrx.length > 0">
 
     <md-data-table-toolbar>
     <h2 class="md-title">Results</h2>
@@ -61,5 +74,5 @@
       </tr>
     </md-data-table-container>
     </table>
-  </md-content>
+	</div>
 </div>

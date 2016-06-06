@@ -1,19 +1,37 @@
 angular.module('numerical-analysis')
-    .controller('NewtonInterpolationCtrl', function (NewtonInterpolation, Utils) {
+    .controller('NewtonInterpolationCtrl', function (Utils) {
 
-        var self = this;
+  var self = this;
 
-        self.results = [];
+    self.Xs = null;
+    self.Ys = null;
 
-        self.xs = [50, 200, 350];
-        self.ys = [50, 149.49363435889023, 249.12670270278602];
-
-        self.calculate = function () {
-            var res = NewtonInterpolation.calculate(self.xs, self.ys);
-            for(var i = 0; i < res.length; i++) {
-                var result = {};
-
+self.calculate = function(){
+	self.puntosx = Utils.parseCSV(self.Xs, '\n', ';')[0].map(parseFloat);
+    self.puntosy = Utils.parseCSV(self.Ys, '\n', ';')[0].map(parseFloat);
+	
+	self.arr = []
+    var nroPuntos= 0;
+    for(var i=0;i<self.puntosx.length;i++){
+        nroPuntos++;
+    }
+    var pol = "P(x)= "
+    for(var k=0;k<nroPuntos;k++){
+        termino = "";
+        for(var i = 0; i < nroPuntos ; i++){
+            if(i!=k){
+                termino = termino + ("[(x"+
+                    (self.puntosx[i]<0?("+"+(-1)*self.puntosx[i]):("-"+self.puntosx[i]))
+                +")/("+self.puntosx[k]+(self.puntosx[i]<0?("+"+(-1)*self.puntosx[i]):("-"+self.puntosx[i]))+")]");  
             }
-            console.log();
-        };
-    });
+        }
+        self.arr.push({
+            num:k,
+            ter:[termino.slice(0, termino.length/2), '*', termino.slice(termino.length/2)].join('')
+        })
+        console.log("L"+k+"(x):"+termino);
+        pol += (self.puntosy[k]>0?"+":"")+self.puntosy[k]+"*"+termino+"\n";
+    }
+    self.res = pol
+    };
+})

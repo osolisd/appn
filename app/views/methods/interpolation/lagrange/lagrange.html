@@ -4,9 +4,12 @@
 		<div layout="row">
 			<md-input-container flex>
 				<input type="file" aria-label="xs file" fileread="lagrange.Xs" required accept=".csv">Xs vector CSV file</input>
+				<strong><i>The vector must be in row style and order by x's value</i></strong>
 			</md-input-container>
 			<md-input-container flex>
 				<input type="file" aria-label="ys file" fileread="lagrange.Ys" required accept=".csv">Ys vector CSV file</input>
+				<strong><i>The vector must be in row style and order by x's value</i></strong>
+				<strong><i>Click here to load files.</i></strong>
 			</md-input-container>
 		</div>
 		<div layout="row" layout-wrap>
@@ -18,6 +21,6 @@
     		<interpolation-menu>
   		</div>
 	</form>
-	<h1 ng-repeat='x in lagrange.arr'>L{{x.num}}= {{x.ter}}</h1>
-	<h1>{{lagrange.res}}</h1>
+	<p ng-repeat='x in lagrange.arr'>L{{x.num}}= {{x.ter}}</p>
+	<p>{{lagrange.res}}</p>
 </div>
